@@ -2872,51 +2872,81 @@ html, body, #root, .site-header, section {
   /* Admissions Form Section */
   .admissions-section {
     padding: 2rem 0 !important;
+    overflow-x: hidden !important;
   }
   .admission-container {
     grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
+    gap: 1.25rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .admission-info {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .adm-info-title {
-    font-size: 1.5rem !important;
+    font-size: 1.45rem !important;
     line-height: 1.2 !important;
   }
   .adm-info-desc {
-    font-size: 0.86rem !important;
-    margin-bottom: 1.25rem !important;
+    font-size: 0.85rem !important;
+    margin-bottom: 1rem !important;
   }
   .adm-step-item {
-    padding: 0.7rem 0.75rem !important;
+    padding: 0.65rem 0.75rem !important;
     gap: 0.65rem !important;
+    box-sizing: border-box !important;
+    max-width: 100% !important;
   }
   .admission-contact-card {
-    padding: 1rem !important;
+    padding: 0.85rem 0.75rem !important;
+    box-sizing: border-box !important;
+    max-width: 100% !important;
   }
   .adm-form-card {
-    padding: 1.25rem 1rem !important;
+    padding: 1.15rem 0.85rem !important;
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    width: 100% !important;
   }
   .adm-form-title {
-    font-size: 1.25rem !important;
+    font-size: 1.2rem !important;
+  }
+  .adm-form-sub {
+    font-size: 0.78rem !important;
+    word-break: break-word !important;
   }
   .form-row {
     grid-template-columns: 1fr !important;
-    gap: 0.75rem !important;
+    gap: 0.65rem !important;
+    width: 100% !important;
+  }
+  .form-group {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .form-group label {
-    font-size: 0.82rem !important;
-    margin-bottom: 0.3rem !important;
+    font-size: 0.8rem !important;
+    margin-bottom: 0.25rem !important;
   }
   .form-control {
-    padding: 0.65rem 0.85rem !important;
-    font-size: 0.88rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.6rem 0.75rem !important;
+    font-size: 0.85rem !important;
   }
 
-  /* Equal Action Buttons for Admissions, FAQ & Footer */
+  /* Full-width Stacked Action Buttons on Mobile (No Clipping!) */
   .adm-quick-actions,
   .faq-banner-actions,
   .footer-callout-actions {
     display: flex !important;
-    flex-direction: row !important;
+    flex-direction: column !important;
     gap: 0.5rem !important;
     width: 100% !important;
     margin-top: 0.75rem !important;
@@ -2924,16 +2954,16 @@ html, body, #root, .site-header, section {
   .adm-quick-actions .btn,
   .faq-banner-actions .btn,
   .footer-callout-actions .btn {
-    flex: 1 1 0% !important;
-    min-width: 0 !important;
-    width: 50% !important;
+    width: 100% !important;
+    flex: none !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     text-align: center !important;
-    padding: 0.65rem 0.4rem !important;
-    font-size: 0.82rem !important;
-    white-space: nowrap !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 0.88rem !important;
+    white-space: normal !important;
+    word-break: normal !important;
   }
 
   /* FAQ Section */

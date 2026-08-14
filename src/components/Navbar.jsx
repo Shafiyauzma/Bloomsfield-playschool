@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { MessageCircle, Menu, X, Instagram, Phone, Sparkles, Home, Star, BookOpen, Calculator, Shield, Image, HelpCircle, MapPin, Calendar } from 'lucide-react';
+import { createPortal } from 'react-dom';
+import { MessageCircle, Menu, X, Instagram, Phone, Sparkles } from 'lucide-react';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -71,8 +72,8 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Overlay & Drawer - ONLY mounted when open */}
-      {isMobileOpen && (
+      {/* Mobile Overlay & Drawer - Portaled directly to document.body for highest stacking level */}
+      {isMobileOpen && typeof document !== 'undefined' && createPortal(
         <>
           <div className="mobile-backdrop" onClick={closeMenu} />
           <div className="mobile-menu active">
@@ -193,7 +194,8 @@ export default function Navbar() {
             </div>
 
           </div>
-        </>
+        </>,
+        document.body
       )}
     </header>
   );
