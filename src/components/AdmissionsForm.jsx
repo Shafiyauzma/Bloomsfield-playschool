@@ -41,7 +41,6 @@ export default function AdmissionsForm() {
     childName: '',
     childAge: '',
     program: 'Nursery / Pre-KG (2.5 - 3.5 Yrs)',
-    visitDate: '',
     notes: ''
   });
   
@@ -72,7 +71,6 @@ export default function AdmissionsForm() {
     if (formData.childName) waMsg += `👶 *Child Name:* ${encodeURIComponent(formData.childName)}%0A`;
     if (formData.childAge) waMsg += `🎂 *Child Age/DOB:* ${encodeURIComponent(formData.childAge)}%0A`;
     if (formData.program) waMsg += `🎓 *Program:* ${encodeURIComponent(formData.program)}%0A`;
-    if (formData.visitDate) waMsg += `📅 *Preferred Visit Date:* ${encodeURIComponent(formData.visitDate)}%0A`;
     if (formData.notes) waMsg += `📝 *Notes:* ${encodeURIComponent(formData.notes)}%0A`;
 
     const waUrl = `https://wa.me/918897334744?text=${waMsg}`;
@@ -99,8 +97,6 @@ export default function AdmissionsForm() {
       '👶 Child\'s Full Name': formData.childName || 'Not specified',
       '🎂 Child\'s Age / DOB': formData.childAge || 'Not specified',
       '🎓 Program Selected': formData.program,
-      
-      '📅 Preferred Campus Visit': formData.visitDate ? `${formData.visitDate}` : 'To be scheduled with parent',
       '📝 Parent Notes / Special Query': formData.notes || 'No extra notes provided',
       
       '📍 CAMPUS METADATA': 'AMALAPURAM CAMPUS - 533201',
@@ -133,7 +129,7 @@ export default function AdmissionsForm() {
       setIsSubmitting(false);
       setFormData({
         parentName: '', phone: '', childName: '', childAge: '',
-        program: 'Nursery / Pre-KG (2.5 - 3.5 Yrs)', visitDate: '', notes: ''
+        program: 'Nursery / Pre-KG (2.5 - 3.5 Yrs)', notes: ''
       });
     }
   };
@@ -283,34 +279,21 @@ export default function AdmissionsForm() {
               </div>
             </div>
 
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="program">Program Applying For</label>
-                <select
-                  id="program"
-                  name="program"
-                  className="form-control"
-                  value={formData.program}
-                  onChange={handleChange}
-                >
-                  <option>Playgroup (1.5 - 2.5 Yrs)</option>
-                  <option>Nursery / Pre-KG (2.5 - 3.5 Yrs)</option>
-                  <option>Junior KG / LKG (3.5 - 4.5 Yrs)</option>
-                  <option>Senior KG / UKG (4.5 - 5.5 Yrs)</option>
-                  <option>Daycare / Extended Care</option>
-                </select>
-              </div>
-              <div className="form-group">
-                <label htmlFor="visitDate">Preferred Campus Visit Date</label>
-                <input
-                  type="date"
-                  id="visitDate"
-                  name="visitDate"
-                  className="form-control"
-                  value={formData.visitDate}
-                  onChange={handleChange}
-                />
-              </div>
+            <div className="form-group" style={{ marginBottom: '1rem' }}>
+              <label htmlFor="program">Program Applying For</label>
+              <select
+                id="program"
+                name="program"
+                className="form-control"
+                value={formData.program}
+                onChange={handleChange}
+              >
+                <option>Playgroup (1.5 - 2.5 Yrs)</option>
+                <option>Nursery / Pre-KG (2.5 - 3.5 Yrs)</option>
+                <option>Junior KG / LKG (3.5 - 4.5 Yrs)</option>
+                <option>Senior KG / UKG (4.5 - 5.5 Yrs)</option>
+                <option>Daycare / Extended Care</option>
+              </select>
             </div>
 
             <div className="form-group" style={{ marginBottom: '1rem' }}>
