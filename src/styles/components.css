@@ -192,9 +192,10 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(15, 23, 42, 0.5);
-  backdrop-filter: blur(4px);
-  z-index: 97;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 999998 !important;
   animation: fadeIn 0.25s ease;
 }
 
@@ -203,22 +204,16 @@
   position: fixed;
   top: 0;
   right: 0;
-  width: 85%;
-  max-width: 380px;
+  width: 85vw;
+  max-width: 340px;
   height: 100vh;
   background: #FFFFFF;
-  padding: 1.25rem 1.25rem 2rem;
+  padding: 1.25rem 1.15rem 2rem;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  transform: translateX(100%);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 99;
-  box-shadow: -10px 0 35px rgba(0, 0, 0, 0.15);
-}
-
-.mobile-menu.active {
-  transform: translateX(0);
+  z-index: 999999 !important;
+  box-shadow: -10px 0 35px rgba(0, 0, 0, 0.25);
 }
 
 /* Mobile Drawer Header */
@@ -2760,129 +2755,171 @@ html, body, #root, .site-header, section {
 @media (max-width: 768px) {
   /* Global Container & Typography Padding */
   .container {
-    padding-left: 1.15rem;
-    padding-right: 1.15rem;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
   }
 
   .section-title {
-    font-size: 1.75rem;
-    line-height: 1.25;
+    font-size: 1.65rem !important;
+    line-height: 1.25 !important;
   }
   .section-desc {
-    font-size: 0.88rem;
-    line-height: 1.55;
-    margin-bottom: 1.75rem;
+    font-size: 0.88rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1.5rem !important;
   }
 
   /* Hero Section */
   .hero-section {
-    padding: 2.75rem 0 3.5rem;
+    padding: 2.25rem 0 3rem !important;
   }
   .hero-headline {
-    font-size: 2.1rem;
-    line-height: 1.25;
+    font-size: 1.95rem !important;
+    line-height: 1.22 !important;
   }
   .hero-desc {
-    font-size: 0.92rem;
-    margin-bottom: 1.5rem;
+    font-size: 0.88rem !important;
+    margin-bottom: 1.25rem !important;
   }
   .hero-actions {
-    flex-direction: column;
-    width: 100%;
-    gap: 0.65rem;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.6rem !important;
   }
   .hero-actions .btn {
-    width: 100%;
-    justify-content: center;
+    width: 100% !important;
+    justify-content: center !important;
   }
 
   /* Grand Opening */
   .grand-opening-section {
-    padding: 2.5rem 0;
+    padding: 2rem 0 !important;
   }
   .opening-card-cute {
-    padding: 1.5rem 1.15rem;
+    padding: 1.25rem 1rem !important;
   }
   .opening-title {
-    font-size: 1.6rem;
+    font-size: 1.45rem !important;
   }
 
   /* Philosophy & Stats */
   .philosophy-section {
-    padding: 2.5rem 0;
+    padding: 2rem 0 !important;
   }
   .stats-strip-cute {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.85rem;
-    padding: 1.25rem 1rem;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+    padding: 1rem 0.85rem !important;
   }
 
   /* Programs & Calculator */
   .programs-section {
-    padding: 2.5rem 0;
+    padding: 2rem 0 !important;
   }
   .calc-pills-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.6rem;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
   }
 
   /* Daily Routine Flow */
   .routine-section {
-    padding: 2.5rem 0;
+    padding: 2rem 0 !important;
   }
   .routine-grid-cute {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
   }
 
   /* Instagram Feed Section */
   .instagram-section {
-    padding: 2.5rem 0;
+    padding: 2rem 0 !important;
   }
   .instagram-card-banner {
-    padding: 1.75rem 1.25rem;
-    gap: 1.5rem;
+    padding: 1.35rem 1rem !important;
+    gap: 1.35rem !important;
+    border-radius: var(--radius-md) !important;
   }
   .insta-title {
-    font-size: 1.6rem;
+    font-size: 1.45rem !important;
+    line-height: 1.2 !important;
+  }
+  .insta-handle {
+    font-size: 1rem !important;
+    margin-bottom: 0.75rem !important;
   }
   .insta-desc {
-    font-size: 0.88rem;
-    line-height: 1.5;
+    font-size: 0.85rem !important;
+    line-height: 1.48 !important;
+    margin-bottom: 1.25rem !important;
   }
   .insta-follow-btn {
-    width: 100%;
-    justify-content: center;
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 0.9rem !important;
   }
   .insta-posts-preview {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.65rem !important;
   }
 
   /* Facilities & Gallery */
   .facilities-section,
   .gallery-section {
-    padding: 2.5rem 0;
+    padding: 2rem 0 !important;
   }
 
-  /* Admissions Form & Equal Action Buttons */
+  /* Admissions Form Section */
   .admissions-section {
-    padding: 2.5rem 0;
+    padding: 2rem 0 !important;
+  }
+  .admission-container {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  .adm-info-title {
+    font-size: 1.5rem !important;
+    line-height: 1.2 !important;
+  }
+  .adm-info-desc {
+    font-size: 0.86rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+  .adm-step-item {
+    padding: 0.7rem 0.75rem !important;
+    gap: 0.65rem !important;
+  }
+  .admission-contact-card {
+    padding: 1rem !important;
   }
   .adm-form-card {
-    padding: 1.35rem 1.15rem;
+    padding: 1.25rem 1rem !important;
+  }
+  .adm-form-title {
+    font-size: 1.25rem !important;
   }
   .form-row {
-    grid-template-columns: 1fr;
-    gap: 0.85rem;
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
   }
+  .form-group label {
+    font-size: 0.82rem !important;
+    margin-bottom: 0.3rem !important;
+  }
+  .form-control {
+    padding: 0.65rem 0.85rem !important;
+    font-size: 0.88rem !important;
+  }
+
+  /* Equal Action Buttons for Admissions, FAQ & Footer */
   .adm-quick-actions,
   .faq-banner-actions,
   .footer-callout-actions {
     display: flex !important;
     flex-direction: row !important;
-    gap: 0.6rem !important;
+    gap: 0.5rem !important;
     width: 100% !important;
+    margin-top: 0.75rem !important;
   }
   .adm-quick-actions .btn,
   .faq-banner-actions .btn,
@@ -2890,48 +2927,69 @@ html, body, #root, .site-header, section {
     flex: 1 1 0% !important;
     min-width: 0 !important;
     width: 50% !important;
+    display: flex !important;
+    align-items: center !important;
     justify-content: center !important;
     text-align: center !important;
-    padding: 0.65rem 0.5rem !important;
-    font-size: 0.84rem !important;
+    padding: 0.65rem 0.4rem !important;
+    font-size: 0.82rem !important;
+    white-space: nowrap !important;
   }
 
   /* FAQ Section */
   .faq-section {
-    padding: 2.5rem 0;
+    padding: 2rem 0 !important;
   }
   .faq-grid-cute {
-    grid-template-columns: 1fr;
-    gap: 0.85rem;
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+  .faq-bottom-banner {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    text-align: center !important;
+    padding: 1.25rem 1rem !important;
+    gap: 0.85rem !important;
+    margin-top: 2rem !important;
+  }
+  .faq-banner-text {
+    text-align: center !important;
+  }
+  .faq-banner-text strong {
+    font-size: 1.1rem !important;
+    display: block !important;
+  }
+  .faq-banner-text span {
+    font-size: 0.85rem !important;
   }
 
   /* Location Map Section */
   .location-section {
-    padding: 2.5rem 0 3rem;
+    padding: 2rem 0 2.5rem !important;
   }
 
   /* Footer */
   .site-footer {
-    padding: 2.5rem 0 1.5rem;
+    padding: 2.25rem 0 1.25rem !important;
   }
   .footer-callout-banner {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1.25rem 1rem;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 1.25rem 1rem !important;
   }
 }
 
 @media (max-width: 580px) {
   .hero-headline {
-    font-size: 1.8rem;
+    font-size: 1.75rem !important;
   }
   .hero-quick-features {
-    grid-template-columns: 1fr;
-    gap: 0.6rem;
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem !important;
   }
 
   .insta-posts-preview {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
   .pillars-grid-cute,
@@ -2940,25 +2998,25 @@ html, body, #root, .site-header, section {
   .gallery-grid-cute,
   .contact-cards-grid-cute,
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
   }
 
   .gallery-card-cute.wide {
-    grid-column: span 1;
+    grid-column: span 1 !important;
   }
 
   .calc-pills-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
   .map-iframe-cute {
-    height: 270px;
+    height: 250px !important;
   }
 
   .footer-bottom {
-    flex-direction: column;
-    text-align: center;
-    gap: 0.5rem;
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 0.5rem !important;
   }
 }
