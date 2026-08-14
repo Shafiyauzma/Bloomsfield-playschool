@@ -1576,68 +1576,136 @@
 /* --------------------------------------------------------------------------
    INSTAGRAM
    -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   INSTAGRAM
+   -------------------------------------------------------------------------- */
 .instagram-section {
   background: radial-gradient(circle at 80% 20%, #FFF0F5 0%, #FFFFFF 100%);
-  padding: 5.5rem 0;
+  padding: 4.5rem 0;
+  overflow: hidden !important;
 }
 
 .instagram-card-banner {
   background: linear-gradient(135deg, #833AB4 0%, #FD1D1D 50%, #FCB045 100%);
   border-radius: var(--radius-lg);
-  padding: 3.5rem 3rem;
+  padding: 3.25rem 2.75rem;
   color: #FFFFFF;
   box-shadow: var(--shadow-lg);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 2.5rem;
   align-items: center;
   position: relative;
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 .instagram-card-banner::after {
   content: '📸';
   position: absolute;
-  right: -30px; bottom: -30px;
-  font-size: 14rem;
-  opacity: 0.1;
+  right: 0;
+  bottom: -20px;
+  font-size: 12rem;
+  opacity: 0.08;
   pointer-events: none;
+  overflow: hidden;
 }
 
 .insta-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(255,255,255,0.25);
+  background: rgba(255, 255, 255, 0.22);
   backdrop-filter: blur(10px);
-  padding: 0.45rem 1.15rem;
+  padding: 0.4rem 1rem;
   border-radius: var(--radius-full);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 700;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
-.insta-title { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; line-height: 1.15; margin-bottom: 1rem; }
-.insta-handle { font-size: 1.35rem; font-weight: 700; color: #FFE600; margin-bottom: 1.25rem; display: block; }
-.insta-handle:hover { color: #FFFFFF; }
-.insta-desc { font-size: 1.05rem; line-height: 1.65; opacity: 0.95; margin-bottom: 2rem; }
+.insta-title {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
 
-.insta-posts-preview { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.insta-handle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #FFE600;
+  margin-bottom: 1rem;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.insta-handle:hover {
+  color: #FFFFFF;
+}
+
+.insta-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.95;
+  margin-bottom: 1.75rem;
+}
+
+.insta-posts-preview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
 
 .insta-mini-card {
-  background: rgba(255,255,255,0.95);
+  background: rgba(255, 255, 255, 0.96);
   border-radius: var(--radius-md);
-  padding: 1rem;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  padding: 0.85rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
   color: var(--text-dark);
   transition: var(--transition-bounce);
   display: block;
+  text-decoration: none;
 }
 
-.insta-mini-card:hover { transform: translateY(-6px) scale(1.02); }
+.insta-mini-card:hover {
+  transform: translateY(-5px);
+}
 
-.insta-mini-img { width: 100%; aspect-ratio: 1/1; border-radius: var(--radius-sm); object-fit: cover; margin-bottom: 0.75rem; }
-.insta-mini-caption { font-size: 0.82rem; font-weight: 600; color: var(--text-dark); line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.insta-mini-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  margin-bottom: 0.6rem;
+}
+
+.insta-mini-caption {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.insta-card-stats {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.insta-card-stats span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
 
 /* --------------------------------------------------------------------------
    DAILY ROUTINE
@@ -2590,6 +2658,12 @@ textarea.form-control {
 /* --------------------------------------------------------------------------
    MASTER RESPONSIVE BREAKPOINTS (Mobile & Tablet Optimization)
    -------------------------------------------------------------------------- */
+html, body, #root, .site-header, section {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+}
+
 @media (max-width: 992px) {
   /* Trigger Mobile Header Drawer on Tablets & Mobiles */
   .nav-links, .nav-actions {
@@ -2633,6 +2707,15 @@ textarea.form-control {
   
   .opening-card {
     grid-template-columns: 1fr;
+  }
+
+  .instagram-card-banner {
+    grid-template-columns: 1fr;
+    padding: 2.25rem 1.5rem;
+    gap: 2rem;
+  }
+  .insta-title {
+    font-size: 1.75rem;
   }
   
   .pillars-grid-cute {
@@ -2752,13 +2835,37 @@ textarea.form-control {
     gap: 1rem;
   }
 
+  /* Instagram Feed Section */
+  .instagram-section {
+    padding: 2.5rem 0;
+  }
+  .instagram-card-banner {
+    padding: 1.75rem 1.25rem;
+    gap: 1.5rem;
+  }
+  .insta-title {
+    font-size: 1.6rem;
+  }
+  .insta-desc {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+  .insta-follow-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .insta-posts-preview {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
   /* Facilities & Gallery */
   .facilities-section,
   .gallery-section {
     padding: 2.5rem 0;
   }
 
-  /* Admissions Form */
+  /* Admissions Form & Equal Action Buttons */
   .admissions-section {
     padding: 2.5rem 0;
   }
@@ -2768,6 +2875,25 @@ textarea.form-control {
   .form-row {
     grid-template-columns: 1fr;
     gap: 0.85rem;
+  }
+  .adm-quick-actions,
+  .faq-banner-actions,
+  .footer-callout-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 0.6rem !important;
+    width: 100% !important;
+  }
+  .adm-quick-actions .btn,
+  .faq-banner-actions .btn,
+  .footer-callout-actions .btn {
+    flex: 1 1 0% !important;
+    min-width: 0 !important;
+    width: 50% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0.65rem 0.5rem !important;
+    font-size: 0.84rem !important;
   }
 
   /* FAQ Section */
@@ -2793,13 +2919,6 @@ textarea.form-control {
     align-items: flex-start;
     padding: 1.25rem 1rem;
   }
-  .footer-callout-actions {
-    width: 100%;
-  }
-  .footer-callout-actions .btn {
-    flex: 1;
-    justify-content: center;
-  }
 }
 
 @media (max-width: 580px) {
@@ -2809,6 +2928,10 @@ textarea.form-control {
   .hero-quick-features {
     grid-template-columns: 1fr;
     gap: 0.6rem;
+  }
+
+  .insta-posts-preview {
+    grid-template-columns: 1fr;
   }
 
   .pillars-grid-cute,
