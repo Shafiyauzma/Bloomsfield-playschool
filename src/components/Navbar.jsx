@@ -186,10 +186,10 @@ export default function Navbar() {
                 href="https://www.instagram.com/bloomsfieldplayschool?igsh=MTdkaGlwcmdmOWFxOA%3D%3D" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="btn btn-instagram btn-lg"
+                className="btn btn-instagram"
               >
                 <Instagram size={18} />
-                <span>Follow @bloomsfieldplayschool</span>
+                <span>Follow on Instagram</span>
               </a>
             </div>
 

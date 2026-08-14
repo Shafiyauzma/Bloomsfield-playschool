@@ -37,7 +37,7 @@ export default function InstagramFeed() {
               className="btn btn-secondary btn-lg insta-follow-btn"
             >
               <Instagram size={20} />
-              <span>Follow @bloomsfieldplayschool</span>
+              <span>Follow on Instagram</span>
             </a>
           </div>
 
