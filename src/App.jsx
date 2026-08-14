@@ -10,7 +10,7 @@ import Facilities from './components/Facilities';
 import GalleryLightbox from './components/GalleryLightbox';
 import InstagramFeed from './components/InstagramFeed';
 import DailyRoutine from './components/DailyRoutine';
-import Testimonials from './components/Testimonials';
+
 import AdmissionsForm from './components/AdmissionsForm';
 import FAQ from './components/FAQ';
 import LocationMap from './components/LocationMap';
@@ -46,10 +46,7 @@ export default function App() {
         />
         <InstagramFeed />
         <DailyRoutine />
-        {/* Testimonials shown inline within routine section bg */}
-        <section style={{ background: '#FFFFFF', paddingTop: '2rem', paddingBottom: '5.5rem' }}>
-          <Testimonials />
-        </section>
+
         <AdmissionsForm />
         <FAQ />
         <LocationMap />

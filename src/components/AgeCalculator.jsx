@@ -1,93 +1,148 @@
 import React, { useState } from 'react';
-import { Calculator, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react';
+
+const ageGroups = [
+  { key: '1.5-2.5', label: '1.5 – 2.5 Yrs', emoji: '👶', name: 'Playgroup (Toddlers)' },
+  { key: '2.5-3.5', label: '2.5 – 3.5 Yrs', emoji: '🎨', name: 'Nursery (Pre-KG)' },
+  { key: '3.5-4.5', label: '3.5 – 4.5 Yrs', emoji: '📚', name: 'Junior KG (LKG)' },
+  { key: '4.5-5.5', label: '4.5 – 5.5 Yrs', emoji: '🎓', name: 'Senior KG (UKG)' },
+  { key: 'daycare', label: '1.5 – 6 Yrs',    emoji: '🧸', name: 'Extended Daycare' },
+];
+
+const programDetails = {
+  '1.5-2.5': {
+    name: 'Playgroup (Toddlers)',
+    badge: 'Age 1.5 – 2.5 Years',
+    color: '#FF7043',
+    bg: '#FFF3E0',
+    borderColor: '#FFE0B2',
+    emoji: '👶',
+    focus: 'Sensory exploration, tactile motor play, vocabulary readiness, socialization & fine motor games.',
+    highlights: ['Tactile sensory play', 'Motor skill development', 'Separation & routine care']
+  },
+  '2.5-3.5': {
+    name: 'Nursery (Pre-KG)',
+    badge: 'Age 2.5 – 3.5 Years',
+    color: '#FF4081',
+    bg: '#FCE4EC',
+    borderColor: '#F8BBD0',
+    emoji: '🎨',
+    focus: 'Jolly phonics, sound-letter recognition, creative arts, structured curiosity & circle storytelling.',
+    highlights: ['Phonics & sound introduction', 'Creative painting & clay', 'Social collaboration']
+  },
+  '3.5-4.5': {
+    name: 'Junior KG (LKG)',
+    badge: 'Age 3.5 – 4.5 Years',
+    color: '#29B6F6',
+    bg: '#E1F5FE',
+    borderColor: '#B3E5FC',
+    emoji: '📚',
+    focus: 'Early reading fluency, math readiness, Montessori sensorial apparatus, inquiry & teamwork.',
+    highlights: ['Sound blending & sight words', 'Quantitative counting & math', 'Problem solving skills']
+  },
+  '4.5-5.5': {
+    name: 'Senior KG (UKG)',
+    badge: 'Age 4.5 – 5.5 Years',
+    color: '#66BB6A',
+    bg: '#E8F5E9',
+    borderColor: '#C8E6C9',
+    emoji: '🎓',
+    focus: 'Advanced phonics, sentence reading, foundational math, stage confidence & primary school readiness.',
+    highlights: ['Fluent reading & writing', 'Basic addition & subtraction', 'Primary grade transition']
+  },
+  'daycare': {
+    name: 'Extended Daycare & Activity Club',
+    badge: 'Age 1.5 – 6 Years',
+    color: '#AB47BC',
+    bg: '#F3E5F5',
+    borderColor: '#E1BEE7',
+    emoji: '🧸',
+    focus: 'Loving afternoon care, healthy snacks, supervised nap time, storytelling & creative hobby clubs.',
+    highlights: ['Safe supervised rest', 'Nutritious snack routine', 'Creative hobby activities']
+  }
+};
 
 export default function AgeCalculator() {
   const [selectedKey, setSelectedKey] = useState('2.5-3.5');
-
-  const programData = {
-    '1.5-2.5': {
-      name: 'Playgroup (Toddlers)',
-      info: 'Focus: Sensory exploration, tactile play, vocabulary readiness, socialization & fine motor games.',
-      color: '#FFAA00',
-      badge: 'Age 1.5 – 2.5 Years'
-    },
-    '2.5-3.5': {
-      name: 'Nursery / Pre-KG',
-      info: 'Focus: Jolly phonics, letter recognition, creative arts, structured curiosity & circle storytelling.',
-      color: '#FF5E5B',
-      badge: 'Age 2.5 – 3.5 Years'
-    },
-    '3.5-4.5': {
-      name: 'Junior KG (LKG)',
-      info: 'Focus: Early reading, math readiness, Montessori sensorial apparatus, inquiry & collaborative activities.',
-      color: '#3A86FF',
-      badge: 'Age 3.5 – 4.5 Years'
-    },
-    '4.5-5.5': {
-      name: 'Senior KG (UKG)',
-      info: 'Focus: Advanced phonics, reading sentences, foundational numeracy, stage confidence & primary school readiness.',
-      color: '#00BA88',
-      badge: 'Age 4.5 – 5.5 Years'
-    },
-    'daycare': {
-      name: 'Daycare & Activity Club',
-      info: 'Focus: Loving afternoon care, healthy snacks, supervised nap time, storytelling & creative hobby clubs.',
-      color: '#8338EC',
-      badge: 'Age 1.5 – 6 Years'
-    }
-  };
-
-  const currentProgram = programData[selectedKey] || programData['2.5-3.5'];
+  const prog = programDetails[selectedKey];
 
   return (
-    <div className="container" id="calculator" style={{ paddingBottom: '4rem' }}>
-      <div className="calculator-box">
-        <div className="calc-header">
+    <div className="container" id="calculator" style={{ paddingBottom: '2.5rem' }}>
+      <div className="calc-card-cute">
+        
+        {/* Header */}
+        <div className="calc-header-cute">
           <div className="section-badge green">
-            <Calculator size={15} style={{ display: 'inline', verticalAlign: 'text-bottom', marginRight: 4 }} />
+            <Sparkles size={13} style={{ display: 'inline', verticalAlign: 'text-bottom', marginRight: 4 }} />
             Smart Program Finder
           </div>
-          <h3>Child Age Eligibility Calculator</h3>
-          <p style={{ color: 'var(--text-muted)' }}>
-            Select your child's age group to instantly discover their ideal learning program at Bloomsfield!
+          <h3 className="calc-title-cute">Child Age Eligibility Calculator</h3>
+          <p className="calc-desc-cute">
+            Select your child's age group to instantly discover their ideal learning program at Bloomsfield! 🎈
           </p>
         </div>
 
-        <div className="calc-form">
-          <div className="calc-input-group">
-            <label htmlFor="calcAgeSelect">🎂 Child's Current Age / Stage:</label>
-            <select 
-              id="calcAgeSelect" 
-              className="calc-select" 
-              value={selectedKey} 
-              onChange={(e) => setSelectedKey(e.target.value)}
+        {/* Interactive Selector Pills */}
+        <div className="calc-pills-row">
+          {ageGroups.map((g) => (
+            <button
+              key={g.key}
+              type="button"
+              className={`calc-age-pill ${selectedKey === g.key ? 'active' : ''}`}
+              onClick={() => setSelectedKey(g.key)}
             >
-              <option value="1.5-2.5">1.5 – 2.5 Years (Toddler)</option>
-              <option value="2.5-3.5">2.5 – 3.5 Years (Pre-KG / Nursery)</option>
-              <option value="3.5-4.5">3.5 – 4.5 Years (LKG / Junior KG)</option>
-              <option value="4.5-5.5">4.5 – 5.5 Years (UKG / Senior KG)</option>
-              <option value="daycare">1.5 – 6 Years (Extended Daycare & Activity Club)</option>
-            </select>
+              <span className="pill-emoji">{g.emoji}</span>
+              <span>{g.label}</span>
+            </button>
+          ))}
+        </div>
+
+        {/* Recommended Result Box */}
+        <div
+          className="calc-result-cute"
+          style={{
+            '--result-color': prog.color,
+            '--result-bg': prog.bg,
+            '--result-border': prog.borderColor
+          }}
+        >
+          <div className="calc-result-header">
+            <div className="calc-result-badge">
+              <Sparkles size={13} /> Recommended Program
+            </div>
+            <span className="calc-result-age">{prog.badge}</span>
           </div>
 
-          <div className="calc-result-box" style={{ borderLeftColor: currentProgram.color }}>
-            <div className="calc-result-title">
-              <Sparkles size={14} style={{ display: 'inline', marginRight: 4 }} />
-              Recommended Program:
+          <div className="calc-result-main">
+            <div className="calc-result-title-row">
+              <span className="calc-result-emoji">{prog.emoji}</span>
+              <h4 className="calc-result-name">{prog.name}</h4>
             </div>
-            <div className="calc-recommended-name" style={{ color: currentProgram.color }}>
-              {currentProgram.name}
+
+            <p className="calc-result-focus">
+              <strong>Focus:</strong> {prog.focus}
+            </p>
+
+            <div className="calc-highlights-pills">
+              {prog.highlights.map((h, i) => (
+                <span key={i} className="calc-hl-pill">
+                  <CheckCircle2 size={12} color={prog.color} />
+                  {h}
+                </span>
+              ))}
             </div>
-            <div className="calc-recommended-info">
-              {currentProgram.info}
-            </div>
-            <div style={{ marginTop: '0.75rem' }}>
-              <a href="#admissions" className="btn btn-primary btn-sm">
-                <span>Enrol for {currentProgram.name}</span>
-              </a>
-            </div>
+
+            <a
+              href="#admissions"
+              className="calc-enrol-btn"
+              style={{ background: prog.color }}
+            >
+              <span>Enrol for {prog.name}</span>
+              <ArrowRight size={15} />
+            </a>
           </div>
         </div>
+
       </div>
     </div>
   );

@@ -21,18 +21,14 @@ export default function Hero() {
           </p>
 
           <div className="hero-ctas">
-            <a href="#admissions" className="btn btn-primary btn-lg">
-              <GraduationCap size={20} />
-              <span>Enrol Your Child Today</span>
-            </a>
             <a 
               href="https://wa.me/918897334744?text=Hello%20Bloomsfield%20Playschool!%20I%20would%20like%20to%20book%20a%20campus%20visit." 
               target="_blank" 
               rel="noopener noreferrer" 
               className="btn btn-whatsapp btn-lg"
             >
-              <Calendar size={20} />
-              <span>Book Campus Visit</span>
+              <GraduationCap size={20} />
+              <span>Enrol Your Child Today</span>
             </a>
             <a 
               href="https://www.instagram.com/bloomsfieldplayschool?igsh=MTdkaGlwcmdmOWFxOA%3D%3D" 

@@ -1,7 +1,11 @@
-import React from 'react';
-import { Phone, MapPin, Sparkles } from 'lucide-react';
+import React, { useState } from 'react';
+import { Phone, MapPin, Sparkles, X } from 'lucide-react';
 
 export default function TopBar() {
+  const [visible, setVisible] = useState(true);
+
+  if (!visible) return null;
+
   return (
     <div className="top-bar">
       <div className="container top-bar-content">
@@ -23,6 +27,17 @@ export default function TopBar() {
           </a>
         </div>
       </div>
+
+      {/* Close button — absolutely pinned to top-right of the bar */}
+      <button
+        className="top-bar-close"
+        onClick={() => setVisible(false)}
+        aria-label="Dismiss announcement banner"
+        title="Dismiss banner"
+      >
+        <X size={14} />
+      </button>
     </div>
   );
 }
+

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MessageCircle, Menu, X, Instagram, Phone } from 'lucide-react';
+import { MessageCircle, Menu, X, Instagram, Phone, Sparkles, Home, Star, BookOpen, Calculator, Shield, Image, HelpCircle, MapPin, Calendar } from 'lucide-react';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,10 +40,9 @@ export default function Navbar() {
           <a href="#about" className="nav-link">About</a>
           <a href="#programs" className="nav-link">Programs</a>
           <a href="#facilities" className="nav-link">Facilities</a>
-          <a href="#opening" className="nav-link">Grand Opening</a>
           <a href="#gallery" className="nav-link">Gallery</a>
           <a href="#admissions" className="nav-link">Admissions</a>
-          <a href="#contact" className="nav-link">Contact & Map</a>
+          <a href="#contact" className="nav-link">Contact</a>
         </nav>
 
         {/* Desktop Nav CTA Actions */}
@@ -72,19 +71,100 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Drawer Navigation */}
+      {/* Mobile Overlay & Drawer */}
+      {isMobileOpen && <div className="mobile-backdrop" onClick={closeMenu} />}
       <div className={`mobile-menu ${isMobileOpen ? 'active' : ''}`}>
-        <a href="#about" className="mobile-nav-link" onClick={closeMenu}>About Bloomsfield</a>
-        <a href="#programs" className="mobile-nav-link" onClick={closeMenu}>Academic Programs</a>
-        <a href="#calculator" className="mobile-nav-link" onClick={closeMenu}>Age Eligibility Calculator</a>
-        <a href="#facilities" className="mobile-nav-link" onClick={closeMenu}>Facilities & Safety</a>
-        <a href="#opening" className="mobile-nav-link" onClick={closeMenu}>Grand Opening 2026</a>
-        <a href="#gallery" className="mobile-nav-link" onClick={closeMenu}>Campus Photo Gallery</a>
-        <a href="#instagram" className="mobile-nav-link" onClick={closeMenu}>Instagram Feed (@bloomsfieldplayschool)</a>
-        <a href="#admissions" className="mobile-nav-link" onClick={closeMenu}>Admissions 2026-27</a>
-        <a href="#faq" className="mobile-nav-link" onClick={closeMenu}>Parent FAQs</a>
-        <a href="#contact" className="mobile-nav-link" onClick={closeMenu}>Location Map & Address</a>
         
+        {/* Cute Drawer Header */}
+        <div className="mobile-drawer-header">
+          <div className="mobile-drawer-brand">
+            <img src="/playschool1.jpeg" alt="Logo" className="mobile-logo-img" />
+            <div>
+              <strong className="mobile-brand-title">Bloomsfield Playschool</strong>
+              <p className="mobile-brand-sub">Admissions Open 2026-27 🌸</p>
+            </div>
+          </div>
+          <button className="mobile-drawer-close" onClick={closeMenu} aria-label="Close menu">
+            <X size={22} />
+          </button>
+        </div>
+
+        {/* Reordered Mobile Nav Items - Grand Opening BEFORE About */}
+        <div className="mobile-nav-list">
+          <a href="#opening" className="mobile-nav-item highlight-item" onClick={closeMenu}>
+            <span className="mob-icon-badge yellow">🎉</span>
+            <div className="mob-item-text">
+              <strong>Grand Opening 2026</strong>
+              <span>Campus Unveiling &amp; Admissions</span>
+            </div>
+          </a>
+
+          <a href="#about" className="mobile-nav-item" onClick={closeMenu}>
+            <span className="mob-icon-badge red">🌸</span>
+            <div className="mob-item-text">
+              <strong>About Bloomsfield</strong>
+              <span>Montessori &amp; Play Philosophy</span>
+            </div>
+          </a>
+
+          <a href="#programs" className="mobile-nav-item" onClick={closeMenu}>
+            <span className="mob-icon-badge blue">🎓</span>
+            <div className="mob-item-text">
+              <strong>Academic Programs</strong>
+              <span>Playgroup, Nursery, LKG, UKG</span>
+            </div>
+          </a>
+
+          <a href="#calculator" className="mobile-nav-item" onClick={closeMenu}>
+            <span className="mob-icon-badge purple">🔢</span>
+            <div className="mob-item-text">
+              <strong>Age Eligibility Calculator</strong>
+              <span>Discover ideal program for child</span>
+            </div>
+          </a>
+
+          <a href="#facilities" className="mobile-nav-item" onClick={closeMenu}>
+            <span className="mob-icon-badge green">🌿</span>
+            <div className="mob-item-text">
+              <strong>Facilities &amp; Safety</strong>
+              <span>100% AC &amp; 24/7 CCTV Campus</span>
+            </div>
+          </a>
+
+          <a href="#gallery" className="mobile-nav-item" onClick={closeMenu}>
+            <span className="mob-icon-badge coral">📸</span>
+            <div className="mob-item-text">
+              <strong>Campus Photo Gallery</strong>
+              <span>Classrooms &amp; Activity photos</span>
+            </div>
+          </a>
+
+          <a href="#admissions" className="mobile-nav-item" onClick={closeMenu}>
+            <span className="mob-icon-badge red">📝</span>
+            <div className="mob-item-text">
+              <strong>Admissions 2026-27</strong>
+              <span>Enquire &amp; Book Campus Visit</span>
+            </div>
+          </a>
+
+          <a href="#faq" className="mobile-nav-item" onClick={closeMenu}>
+            <span className="mob-icon-badge blue">❓</span>
+            <div className="mob-item-text">
+              <strong>Parent FAQs</strong>
+              <span>Answers to common queries</span>
+            </div>
+          </a>
+
+          <a href="#contact" className="mobile-nav-item" onClick={closeMenu}>
+            <span className="mob-icon-badge purple">📍</span>
+            <div className="mob-item-text">
+              <strong>Contact &amp; Campus Map</strong>
+              <span>Black Bridge, Amalapuram</span>
+            </div>
+          </a>
+        </div>
+
+        {/* Mobile Quick Action Buttons */}
         <div className="mobile-nav-actions">
           <a href="tel:8897334744" className="btn btn-primary btn-lg" onClick={closeMenu}>
             <Phone size={18} />
@@ -109,6 +189,7 @@ export default function Navbar() {
             <span>Follow @bloomsfieldplayschool</span>
           </a>
         </div>
+
       </div>
     </header>
   );

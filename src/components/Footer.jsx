@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram, Phone, MessageCircle, Mail, MapPin, Home, BookOpen, Star, Image, Send, HelpCircle } from 'lucide-react';
+import { Instagram, Phone, MessageCircle, Mail, MapPin, Home, BookOpen, Star, Image } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -13,23 +13,42 @@ export default function Footer() {
               <img src="/playschool1.jpeg" alt="Bloomsfield Playschool Logo" className="footer-logo-img" />
               <div>
                 <div className="brand-name">Bloomsfield <span>Playschool</span></div>
-                <div className="brand-tagline" style={{ color: '#94A3B8', fontSize: '0.8rem' }}>Where Little Minds Bloom ❤️</div>
+                <div className="brand-tagline">Where Little Minds Bloom ❤️</div>
               </div>
             </div>
             <p className="footer-about">
               A premium Montessori-inspired early childhood preschool in Amalapuram dedicated to playful discovery, phonics mastery, emotional well-being, and academic readiness.
             </p>
             <div className="footer-socials">
-              <a href="https://www.instagram.com/bloomsfieldplayschool?igsh=MTdkaGlwcmdmOWFxOA%3D%3D" target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="Instagram">
+              <a
+                href="https://www.instagram.com/bloomsfieldplayschool?igsh=MTdkaGlwcmdmOWFxOA%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-btn"
+                aria-label="Instagram"
+                title="Visit Instagram Page"
+              >
                 <Instagram size={18} />
               </a>
-              <a href="https://wa.me/918897334744" target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="WhatsApp">
+              <a
+                href="https://wa.me/918897334744"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-btn"
+                aria-label="WhatsApp"
+                title="Chat on WhatsApp"
+              >
                 <MessageCircle size={18} />
               </a>
-              <a href="tel:8897334744" className="social-btn" aria-label="Call">
+              <a href="tel:8897334744" className="social-btn" aria-label="Call" title="Call School Desk">
                 <Phone size={18} />
               </a>
-              <a href="mailto:bloomsfieldplayschool@gmail.com" className="social-btn" aria-label="Email">
+              <a
+                href="mailto:bloomsfieldplayschool@gmail.com?subject=Enquiry%20from%20Website"
+                className="social-btn"
+                aria-label="Email"
+                title="Send Email to Bloomsfield Playschool"
+              >
                 <Mail size={18} />
               </a>
             </div>
@@ -42,7 +61,7 @@ export default function Footer() {
               <li><a href="#hero"><Home size={14} /> Home</a></li>
               <li><a href="#about"><Star size={14} /> About Philosophy</a></li>
               <li><a href="#programs"><BookOpen size={14} /> Academic Programs</a></li>
-              <li><a href="#facilities">🌿 Facilities & Safety</a></li>
+              <li><a href="#facilities">🌿 Facilities &amp; Safety</a></li>
               <li><a href="#opening">🎉 Grand Opening 2026</a></li>
               <li><a href="#gallery"><Image size={14} /> Campus Photo Gallery</a></li>
             </ul>
@@ -56,7 +75,7 @@ export default function Footer() {
               <li><a href="#programs">🎨 Nursery / Pre-KG</a></li>
               <li><a href="#programs">📚 Junior KG (LKG)</a></li>
               <li><a href="#programs">🎓 Senior KG (UKG)</a></li>
-              <li><a href="#programs">🧸 Daycare & Extended Care</a></li>
+              <li><a href="#programs">🧸 Daycare &amp; Extended Care</a></li>
               <li><a href="#calculator">🔢 Age Eligibility Calculator</a></li>
             </ul>
           </div>
@@ -84,7 +103,7 @@ export default function Footer() {
               <li>
                 <span className="icon"><Mail size={16} /></span>
                 <span>
-                  <a href="mailto:bloomsfieldplayschool@gmail.com" style={{ color: '#94A3B8' }}>
+                  <a href="mailto:bloomsfieldplayschool@gmail.com?subject=Enquiry%20from%20Website" style={{ color: '#94A3B8' }}>
                     bloomsfieldplayschool@gmail.com
                   </a>
                 </span>
